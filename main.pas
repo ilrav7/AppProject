@@ -53,14 +53,14 @@ begin
           Form103.WindowState := wsMaximized;
           Form103.Show;
       end;
-  // else ShowMessage('выберите ну хоть что-нибудь');
+ // else ShowMessage('выберите ну хоть что-нибудь');
   end;
 end;
 
 procedure TFormMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   //ShowMessage('Exit - завершение работы');
-  DM_main.MyConnDB.Connected := False;
+  DM_conn.MyConnDB.Connected := False;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);

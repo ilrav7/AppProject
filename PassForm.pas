@@ -53,7 +53,7 @@ begin
  v_login := Edit1.Text;
  v_password := Edit2.Text;
 
- with DM_MAIN.QryTemp do
+ with DM_conn.QryTemp do
    begin
      SQL.Clear;
      SQL.Add('SELECT id, CONCAT(firstname, '' '', lastname) as FIO ');
@@ -67,11 +67,11 @@ begin
      Active := True;
    end;
 
- if not VarIsNull(DM_Main.QryTemp.FieldValues['id']) then
+ if not VarIsNull(DM_conn.QryTemp.FieldValues['id']) then
    begin
      ModalResult:= mrOk;
-     DM1.User_ID := DM_Main.QryTemp.Fields[0].AsInteger;
-     DM1.User_FIO := DM_Main.QryTemp.Fields[1].AsString;
+     DM1.User_ID := DM_conn.QryTemp.Fields[0].AsInteger;
+     DM1.User_FIO := DM_conn.QryTemp.Fields[1].AsString;
    end
   else
     Application.MessageBox('Логин или пароль введены не верно', 'Ошибка');
@@ -79,7 +79,7 @@ end;
 
 procedure TFormLogin.btnLogoutClick(Sender: TObject);
 begin
-  DM_main.MyConnDB.Connected := False;
+  DM_conn.MyConnDB.Connected := False;
   Application.Terminate;
 end;
 
@@ -87,10 +87,12 @@ procedure TFormLogin.FormCreate(Sender: TObject);
 begin
 (* Если DataModule не создан, то создаем его вручную  для создания
    удаленного подключения к БД *)
-  if (not Assigned(DM_main)) then
+  if (not Assigned(DM_conn)) then
     begin
-      DM_main := TDM_main.Create(Application);
-    end
+      DM_conn := TDM_conn.Create(Application);
+    end;
+  { if (not Assigned(DM_main)) then
+    showmessage('dm_main не создан')    }
 end;
 
 end.

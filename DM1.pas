@@ -7,7 +7,7 @@ uses
   MyAccess;
 
 type
-  TDM_MAIN = class(TDataModule)
+  TDM_conn = class(TDataModule)
     MyConnDB_INET: TMyConnection;
     QryTemp: TMyQuery;
     MyConnDB: TMyConnection;
@@ -20,7 +20,7 @@ type
   end;
 
 var
-  DM_MAIN: TDM_MAIN;
+  DM_conn: TDM_conn;
   User_ID: Integer;
   User_FIO: string;
 
