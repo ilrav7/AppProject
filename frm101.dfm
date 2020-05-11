@@ -1,6 +1,6 @@
 object Form101: TForm101
-  Left = 319
-  Top = 157
+  Left = 311
+  Top = 130
   BorderStyle = bsNone
   Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082' [Form101]'
   ClientHeight = 509
@@ -24,7 +24,7 @@ object Form101: TForm101
     Top = 0
     Width = 857
     Height = 452
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -64,7 +64,7 @@ object Form101: TForm101
           Font.Style = [fsBold]
           ParentFont = False
         end
-        object btnSearch: TButton
+        object btnSearchPost: TButton
           Left = 216
           Top = 15
           Width = 75
@@ -77,7 +77,7 @@ object Form101: TForm101
           Font.Style = []
           ParentFont = False
           TabOrder = 0
-          OnClick = btnSearchClick
+          OnClick = btnSearchPostClick
         end
         object Edit1: TEdit
           Left = 24
@@ -94,7 +94,13 @@ object Form101: TForm101
         Height = 356
         Align = alClient
         DataSource = DM_main.dsPost
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
         Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ParentFont = False
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -105,20 +111,50 @@ object Form101: TForm101
           item
             Expanded = False
             FieldName = 'id'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
             Title.Caption = 'ID'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -11
+            Title.Font.Name = 'MS Sans Serif'
+            Title.Font.Style = [fsBold]
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'name'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
             Title.Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1076#1086#1083#1078#1085#1086#1089#1090#1080
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -11
+            Title.Font.Name = 'MS Sans Serif'
+            Title.Font.Style = [fsBold]
             Width = 227
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'salary'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
             Title.Caption = #1054#1082#1083#1072#1076
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -11
+            Title.Font.Name = 'MS Sans Serif'
+            Title.Font.Style = [fsBold]
             Width = 121
             Visible = True
           end>
@@ -127,10 +163,211 @@ object Form101: TForm101
     object TabSheet2: TTabSheet
       Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082' "'#1054#1090#1076#1077#1083#1099'"'
       ImageIndex = 1
+      object Panel4: TPanel
+        Left = 0
+        Top = 0
+        Width = 849
+        Height = 65
+        Align = alTop
+        BevelOuter = bvNone
+        Color = clCream
+        TabOrder = 0
+        object Label3: TLabel
+          Left = 24
+          Top = 5
+          Width = 89
+          Height = 13
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object btnSearchDept: TButton
+          Left = 216
+          Top = 15
+          Width = 75
+          Height = 33
+          Caption = #1055#1086#1082#1072#1079#1072#1090#1100
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          OnClick = btnSearchDeptClick
+        end
+        object Edit3: TEdit
+          Left = 24
+          Top = 27
+          Width = 121
+          Height = 19
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object DBGrid2: TDBGrid
+        Left = 0
+        Top = 65
+        Width = 849
+        Height = 356
+        Align = alClient
+        DataSource = DM_main.dsDept
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ParentFont = False
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = [fsBold]
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'name'
+            Title.Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1086#1090#1076#1077#1083#1072
+            Width = 201
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'phone'
+            Title.Caption = #1058#1077#1083#1077#1092#1086#1085
+            Width = 103
+            Visible = True
+          end>
+      end
     end
     object TabSheet3: TTabSheet
       Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082' "'#1057#1086#1090#1088#1091#1076#1085#1080#1082#1080'"'
       ImageIndex = 2
+      object Panel3: TPanel
+        Left = 0
+        Top = 0
+        Width = 849
+        Height = 65
+        Align = alTop
+        BevelOuter = bvNone
+        Color = clCream
+        TabOrder = 0
+        object Label2: TLabel
+          Left = 24
+          Top = 5
+          Width = 89
+          Height = 13
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Button1: TButton
+          Left = 216
+          Top = 15
+          Width = 75
+          Height = 33
+          Caption = #1055#1086#1082#1072#1079#1072#1090#1100
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          OnClick = btnSearchPostClick
+        end
+        object Edit2: TEdit
+          Left = 24
+          Top = 27
+          Width = 121
+          Height = 19
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object DBGrid3: TDBGrid
+        Left = 0
+        Top = 65
+        Width = 849
+        Height = 356
+        Align = alClient
+        DataSource = DM_main.dsEmp
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ParentFont = False
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = [fsBold]
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'full_name'
+            Title.Caption = #1060'.'#1048'.'#1054'.'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'phone'
+            Title.Caption = #1058#1077#1083#1077#1092#1086#1085
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'birthday'
+            Title.Caption = #1044'.'#1052'.'#1043'. '#1088#1086#1078#1076#1077#1085#1080#1103
+            Width = 127
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'id_dept'
+            Title.Caption = #8470' '#1086#1090#1076#1077#1083#1072' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1072
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'id_pos'
+            Visible = True
+          end>
+      end
     end
   end
   object Panel2: TPanel

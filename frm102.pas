@@ -8,9 +8,6 @@ uses
 
 type
   TForm102 = class(TForm)
-    Button1: TButton;
-    Label1: TLabel;
-    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,10 +20,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm102.Button1Click(Sender: TObject);
-begin
- label1.Caption := 'sssss';
-end;
 
 end.
