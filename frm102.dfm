@@ -16,20 +16,4 @@ object Form102: TForm102
   Visible = True
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 208
-    Top = 176
-    Width = 32
-    Height = 13
-    Caption = 'Label1'
-  end
-  object Button1: TButton
-    Left = 256
-    Top = 240
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 0
-    OnClick = Button1Click
-  end
 end

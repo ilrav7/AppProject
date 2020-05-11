@@ -10,6 +10,10 @@ type
     qryPost: TMyQuery;
     dsPost: TDataSource;
     qryEmpty: TMyQuery;
+    qryDept: TMyQuery;
+    dsDept: TDataSource;
+    qryEmp: TMyQuery;
+    dsEmp: TDataSource;
   private
     { Private declarations }
   public
