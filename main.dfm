@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 275
-  Top = 197
-  Width = 928
+  Left = 214
+  Top = 196
+  Width = 1007
   Height = 451
   Caption = 'AppProject'
   Color = clBtnFace

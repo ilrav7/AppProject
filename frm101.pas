@@ -31,6 +31,9 @@ type
     Label2: TLabel;
     btnSearchEmp: TButton;
     Edit2: TEdit;
+    btnResetPost: TButton;
+    btnResetEmp: TButton;
+    btnResetDept: TButton;
     procedure btnAddClick(Sender: TObject);
     procedure btnSearchPostClick(Sender: TObject);
     procedure btnDeleteClick(Sender: TObject);
@@ -41,6 +44,9 @@ type
     procedure TabSheet3Show(Sender: TObject);
     procedure TabSheet2Show(Sender: TObject);
     procedure btnSearchEmpClick(Sender: TObject);
+    procedure btnResetPostClick(Sender: TObject);
+    procedure btnResetEmpClick(Sender: TObject);
+    procedure btnResetDeptClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -289,6 +295,30 @@ begin
      DM_main.qryEmp.MacroByName('fio_filter').Active := False;
   end;
   DM_main.qryEmp.Active := True;
+end;
+
+procedure TForm101.btnResetPostClick(Sender: TObject);
+begin
+  Edit1.Clear;
+  DM_main.qryPost.Active := False;
+  DM_main.qryPost.MacroByName('name_filter').Active := False;
+  DM_main.qryPost.Active := True;
+end;
+
+procedure TForm101.btnResetEmpClick(Sender: TObject);
+begin
+  Edit2.Clear;
+  DM_main.qryEmp.Active := False;
+  DM_main.qryEmp.MacroByName('fio_filter').Active := False;
+  DM_main.qryEmp.Active := True;
+end;
+
+procedure TForm101.btnResetDeptClick(Sender: TObject);
+begin
+  Edit3.Clear;
+  DM_main.qryDept.Active := False;
+  DM_main.qryDept.MacroByName('name_filter').Active := False;
+  DM_main.qryDept.Active := True;
 end;
 
 end.

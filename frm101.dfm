@@ -24,7 +24,7 @@ object Form101: TForm101
     Top = 0
     Width = 857
     Height = 438
-    ActivePage = TabSheet3
+    ActivePage = TabSheet2
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -53,7 +53,7 @@ object Form101: TForm101
         Color = clCream
         TabOrder = 0
         object Label1: TLabel
-          Left = 24
+          Left = 104
           Top = 5
           Width = 89
           Height = 13
@@ -66,11 +66,11 @@ object Form101: TForm101
           ParentFont = False
         end
         object btnSearchPost: TButton
-          Left = 216
+          Left = 296
           Top = 15
           Width = 75
           Height = 33
-          Caption = #1055#1086#1082#1072#1079#1072#1090#1100
+          Caption = #1055#1086#1080#1089#1082
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
@@ -81,11 +81,20 @@ object Form101: TForm101
           OnClick = btnSearchPostClick
         end
         object Edit1: TEdit
-          Left = 24
+          Left = 104
           Top = 27
           Width = 121
           Height = 19
           TabOrder = 1
+        end
+        object btnResetPost: TButton
+          Left = 0
+          Top = 15
+          Width = 75
+          Height = 33
+          Caption = #1057#1073#1088#1086#1089
+          TabOrder = 2
+          OnClick = btnResetPostClick
         end
       end
       object DBGrid1: TDBGrid
@@ -160,7 +169,7 @@ object Form101: TForm101
         Color = clCream
         TabOrder = 0
         object Label3: TLabel
-          Left = 24
+          Left = 104
           Top = 5
           Width = 89
           Height = 13
@@ -173,11 +182,11 @@ object Form101: TForm101
           ParentFont = False
         end
         object btnSearchDept: TButton
-          Left = 216
+          Left = 296
           Top = 15
           Width = 75
           Height = 33
-          Caption = #1055#1086#1082#1072#1079#1072#1090#1100
+          Caption = #1055#1086#1080#1089#1082
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
@@ -188,7 +197,7 @@ object Form101: TForm101
           OnClick = btnSearchDeptClick
         end
         object Edit3: TEdit
-          Left = 24
+          Left = 104
           Top = 27
           Width = 121
           Height = 19
@@ -199,6 +208,21 @@ object Form101: TForm101
           Font.Style = []
           ParentFont = False
           TabOrder = 1
+        end
+        object btnResetDept: TButton
+          Left = 0
+          Top = 15
+          Width = 75
+          Height = 33
+          Caption = #1057#1073#1088#1086#1089
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          OnClick = btnResetDeptClick
         end
       end
       object DBGrid2: TDBGrid
@@ -340,7 +364,7 @@ object Form101: TForm101
         Color = clCream
         TabOrder = 1
         object Label2: TLabel
-          Left = 24
+          Left = 104
           Top = 5
           Width = 39
           Height = 13
@@ -353,11 +377,11 @@ object Form101: TForm101
           ParentFont = False
         end
         object btnSearchEmp: TButton
-          Left = 216
+          Left = 296
           Top = 15
           Width = 75
           Height = 33
-          Caption = #1055#1086#1082#1072#1079#1072#1090#1100
+          Caption = #1055#1086#1080#1089#1082
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
@@ -368,12 +392,27 @@ object Form101: TForm101
           OnClick = btnSearchEmpClick
         end
         object Edit2: TEdit
-          Left = 24
+          Left = 104
           Top = 27
           Width = 121
           Height = 19
           TabOrder = 1
         end
+      end
+      object btnResetEmp: TButton
+        Left = 0
+        Top = 15
+        Width = 75
+        Height = 33
+        Caption = #1057#1073#1088#1086#1089
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        OnClick = btnResetEmpClick
       end
     end
   end
