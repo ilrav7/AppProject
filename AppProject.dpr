@@ -10,7 +10,8 @@ uses
   frm103 in 'frm103.pas' {Form103},
   DM2 in 'DM2.pas' {DM_main: TDataModule},
   frm104 in 'frm104.pas' {Form104},
-  frm105 in 'frm105.pas' {Form105};
+  frm105 in 'frm105.pas' {Form105},
+  frm106 in 'frm106.pas' {Form106};
 
 {$R *.res}
 
@@ -20,10 +21,11 @@ begin
     begin
        Application.Initialize;
        Application.CreateForm(TFormMain, FormMain);
-  Application.CreateForm(TDM_main, DM_main);
-  Application.CreateForm(TForm104, Form104);
-  Application.CreateForm(TForm105, Form105);
-  Application.Run;
+       Application.CreateForm(TDM_main, DM_main);
+       Application.CreateForm(TForm104, Form104);
+       Application.CreateForm(TForm105, Form105);
+       Application.CreateForm(TForm106, Form106);
+       Application.Run;
     end
   else begin
       DM_conn.MyConnDB.Connected := False;

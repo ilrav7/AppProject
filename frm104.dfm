@@ -17,8 +17,8 @@ object Form104: TForm104
   object Label1: TLabel
     Left = 8
     Top = 48
-    Width = 81
-    Height = 33
+    Width = 79
+    Height = 26
     Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1076#1086#1083#1078#1085#1086#1089#1090#1080
     WordWrap = True
   end

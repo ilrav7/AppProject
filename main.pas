@@ -53,7 +53,6 @@ begin
           Form103.WindowState := wsMaximized;
           Form103.Show;
       end;
- // else ShowMessage('выберите ну хоть что-нибудь');
   end;
 end;
 
