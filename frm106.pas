@@ -75,7 +75,7 @@ begin
           SQL.Add('      birthday, id_dept, id_pos, flag_fired )  ');
           SQL.Add(' VALUES ( ''' + Edit1.Text + ''' , ');
           SQL.Add(' ''' + MaskEdit1.Text + ''' , ');
-          SQL.Add(' STR_TO_DATE( ''' + DateToStr(DateTimePicker1.Date) + ''' , ''%d.%m.%y'') , ');
+          SQL.Add(' STR_TO_DATE( ''' + DateToStr(DateTimePicker1.Date) + ''' , ''%d.%m.%Y'') , ');
           SQL.Add(' ' + IntToStr(id_dept) + ' , ');
           SQL.Add(' ' + IntToStr(id_post) + ' , 1 )');
           try ExecSQL except
@@ -117,7 +117,7 @@ begin
           SQL.Add('UPDATE employees ');
           SQL.Add(' SET full_name = ''' + Edit1.Text + ''',');
           SQL.Add('     phone = ''' + MaskEdit1.Text + ''', ');
-          SQL.Add('     birthday = STR_TO_DATE(''' + DateToStr(DateTimePicker1.Date) + ''' , ''%d.%m.%y'') ,');
+          SQL.Add('     birthday = STR_TO_DATE(''' + DateToStr(DateTimePicker1.Date) + ''' , ''%d.%m.%Y'') ,');
           SQL.Add('     id_dept = ' + IntToStr(id_dept)  + ',');
           SQL.Add('     id_pos = ' + IntToStr(id_post) + '  ');
           SQL.Add(' Where id = ' + v_id + ' ');

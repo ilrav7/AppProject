@@ -1,8 +1,8 @@
 object Form103: TForm103
-  Left = 453
-  Top = 137
+  Left = 384
+  Top = 173
   Width = 683
-  Height = 519
+  Height = 463
   Caption = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1080' AppProject [Form103]'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,6 +14,7 @@ object Form103: TForm103
   OldCreateOrder = False
   Position = poDefault
   Visible = True
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -60,7 +61,7 @@ object Form103: TForm103
   end
   object Panel2: TPanel
     Left = 0
-    Top = 296
+    Top = 240
     Width = 667
     Height = 184
     Align = alBottom
@@ -71,7 +72,7 @@ object Form103: TForm103
     Left = 0
     Top = 57
     Width = 667
-    Height = 239
+    Height = 183
     Align = alClient
     DataSource = DM_conn.dsUsersApp
     FixedColor = clSkyBlue

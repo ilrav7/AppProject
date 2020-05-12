@@ -1,7 +1,7 @@
 object DM_main: TDM_main
   OldCreateOrder = False
-  Left = 617
-  Top = 301
+  Left = 561
+  Top = 253
   Height = 310
   Width = 328
   object qryPost: TMyQuery
@@ -81,6 +81,7 @@ object DM_main: TDM_main
       '     Inner Join positions p On p.id = emp.id_pos '
       'Where 1 = 1'
       '&fio_filter')
+    Active = True
     Left = 16
     Top = 136
     MacroData = <
@@ -94,5 +95,60 @@ object DM_main: TDM_main
     DataSet = qryEmp
     Left = 64
     Top = 136
+  end
+  object qryReportEmp: TMyQuery
+    Connection = DM_conn.MyConnDB
+    SQL.Strings = (
+      'Select  emp.id as id,'
+      '        emp.full_name,'
+      '        emp.phone,'
+      '        emp.birthday,'
+      '        Case '
+      '            WHEN emp.flag_fired = 1'
+      '            THEN '#39#1044#1072#39
+      '            Else '#39#1053#1077#1090#39
+      '        END  flag_fired,'
+      '        emp.flag_fired as id_flag_fired,'
+      '        d.id as id_dept,'
+      '        p.id as id_pos,'
+      '        d.name as name_dept,'
+      '        p.name as name_pos'
+      'From employees emp'
+      '     Inner Join departments d On d.id = emp.id_dept'
+      '     Inner Join positions p On p.id = emp.id_pos '
+      'Where 1 = 1'
+      '&fio_filter'
+      '&fired_filter'
+      '&dept_filter'
+      '&post_filter')
+    Active = True
+    Left = 224
+    Top = 120
+    MacroData = <
+      item
+        Name = 'fio_filter'
+        Value = 'and lower(full_name) like lower(:p_fio)'
+        Active = False
+      end
+      item
+        Name = 'fired_filter'
+        Value = 'and flag_fired =1'
+        Active = False
+      end
+      item
+        Name = 'dept_filter'
+        Value = 'and d.id = :p_id_dept'
+        Active = False
+      end
+      item
+        Name = 'post_filter'
+        Value = 'and p.id = :p_id_post'
+        Active = False
+      end>
+  end
+  object dsReportEmp: TDataSource
+    DataSet = qryReportEmp
+    Left = 224
+    Top = 176
   end
 end

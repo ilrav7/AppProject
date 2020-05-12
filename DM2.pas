@@ -14,6 +14,8 @@ type
     dsDept: TDataSource;
     qryEmp: TMyQuery;
     dsEmp: TDataSource;
+    qryReportEmp: TMyQuery;
+    dsReportEmp: TDataSource;
   private
     { Private declarations }
   public

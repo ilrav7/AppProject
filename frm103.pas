@@ -16,6 +16,7 @@ type
     Edit1: TEdit;
     Label1: TLabel;
     procedure Button1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +34,20 @@ uses DM1;
 
 procedure TForm103.Button1Click(Sender: TObject);
 begin
+  DM_conn.QryUsersApp.Active := False;
+  if Edit1.Text <> '' then
+    begin
+       DM_conn.QryUsersApp.MacroByName('search_filter').Active := True;
+       DM_conn.QryUsersApp.Params.ParamByName('p_login').AsString := '%' + Edit1.Text + '%';
+       DM_conn.QryUsersApp.Params.ParamByName('p_lastname').AsString := '%' + Edit1.Text + '%';
+    end
+    else DM_conn.QryUsersApp.MacroByName('search_filter').Active := False;
   DM_conn.QryUsersApp.Active := True;
+end;
+
+procedure TForm103.FormShow(Sender: TObject);
+begin
+ DM_conn.QryUsersApp.Active := True;
 end;
 
 end.

@@ -25,6 +25,7 @@ object DM_conn: TDM_conn
     Options.UseUnicode = True
     Username = 'root'
     Server = 'localhost'
+    Connected = True
     LoginPrompt = False
     Left = 32
     Top = 72
@@ -39,8 +40,17 @@ object DM_conn: TDM_conn
     SQL.Strings = (
       'Select * '
       'From users_app'
-      'Where 1 = 1')
+      'Where 1 = 1'
+      '&search_filter')
     Left = 200
     Top = 16
+    MacroData = <
+      item
+        Name = 'search_filter'
+        Value = 
+          'and ( lower(login) like lower(:p_login)'#13#10'        OR'#13#10'         lo' +
+          'wer(lastname) like lower(:p_lastname) )'
+        Active = False
+      end>
   end
 end

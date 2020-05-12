@@ -24,7 +24,7 @@ object Form101: TForm101
     Top = 0
     Width = 857
     Height = 438
-    ActivePage = TabSheet2
+    ActivePage = TabSheet3
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -304,47 +304,45 @@ object Form101: TForm101
             Expanded = False
             FieldName = 'full_name'
             Title.Caption = #1060'.'#1048'.'#1054'.'
-            Width = 100
+            Width = 158
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'phone'
             Title.Caption = #1058#1077#1083#1077#1092#1086#1085
-            Width = 93
+            Width = 99
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'birthday'
             Title.Caption = #1044'.'#1052'.'#1043'. '#1088#1086#1078#1076#1077#1085#1080#1103
-            Width = 132
+            Width = 110
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'name_dept'
             Title.Caption = #1054#1090#1076#1077#1083
-            Width = 130
+            Width = 118
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'name_pos'
             Title.Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100
-            Width = 120
+            Width = 107
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'id_dept'
-            Width = -1
             Visible = False
           end
           item
             Expanded = False
             FieldName = 'id_pos'
-            Width = -1
             Visible = False
           end
           item

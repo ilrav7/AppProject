@@ -120,9 +120,10 @@ object Form106: TForm106
   object DateTimePicker1: TDateTimePicker
     Left = 112
     Top = 86
-    Width = 129
+    Width = 113
     Height = 21
     Date = 43962.779076388890000000
+    Format = 'dd.MM.yyyy'
     Time = 43962.779076388890000000
     TabOrder = 7
   end

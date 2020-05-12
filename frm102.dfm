@@ -1,7 +1,7 @@
 object Form102: TForm102
-  Left = 284
-  Top = 161
-  Width = 905
+  Left = 330
+  Top = 196
+  Width = 788
   Height = 480
   Caption = #1054#1090#1095#1077#1090' - '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1080' [Form102]'
   Color = clBtnFace
@@ -14,12 +14,13 @@ object Form102: TForm102
   OldCreateOrder = False
   Position = poDefault
   Visible = True
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 889
+    Width = 772
     Height = 81
     Align = alTop
     Color = clCream
@@ -45,7 +46,7 @@ object Form102: TForm102
       Height = 13
       Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100
     end
-    object CheckBox1: TCheckBox
+    object CkBxFired: TCheckBox
       Left = 112
       Top = 48
       Width = 153
@@ -61,6 +62,7 @@ object Form102: TForm102
       Height = 25
       Caption = #1057#1073#1088#1086#1089
       TabOrder = 1
+      OnClick = btnResetClick
     end
     object edtFio: TEdit
       Left = 112
@@ -92,25 +94,88 @@ object Form102: TForm102
       Height = 33
       Caption = #1055#1086#1080#1089#1082
       TabOrder = 5
+      OnClick = btnSearchClick
     end
   end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 81
-    Width = 889
+    Width = 772
     Height = 287
     Align = alClient
+    DataSource = DM_main.dsReportEmp
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'MS Sans Serif'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Title.Caption = #1058#1072#1073'. '#1053#1086#1084#1077#1088
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'full_name'
+        Title.Caption = #1060'.'#1048'.'#1054
+        Width = 174
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'birthday'
+        Title.Caption = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'phone'
+        Title.Caption = #1058#1077#1083#1077#1092#1086#1085
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'id_flag_fired'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'id_dept'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'id_pos'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'name_dept'
+        Title.Caption = #1054#1090#1076#1077#1083
+        Width = 120
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'name_pos'
+        Title.Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100
+        Width = 120
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'flag_fired'
+        Title.Caption = #1055#1088#1086#1076#1086#1083#1078#1072#1077#1090' '#1088#1072#1073#1086#1090#1072#1090#1100
+        Visible = True
+      end>
   end
   object Panel2: TPanel
     Left = 0
     Top = 368
-    Width = 889
+    Width = 772
     Height = 73
     Align = alBottom
     Color = clCream
