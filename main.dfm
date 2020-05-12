@@ -1,6 +1,6 @@
 object FormMain: TFormMain
-  Left = 214
-  Top = 196
+  Left = 195
+  Top = 221
   Width = 1007
   Height = 451
   Caption = 'AppProject'

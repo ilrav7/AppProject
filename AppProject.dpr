@@ -21,11 +21,8 @@ begin
     begin
        Application.Initialize;
        Application.CreateForm(TFormMain, FormMain);
-       Application.CreateForm(TDM_main, DM_main);
-       Application.CreateForm(TForm104, Form104);
-       Application.CreateForm(TForm105, Form105);
-       Application.CreateForm(TForm106, Form106);
-       Application.Run;
+  Application.CreateForm(TDM_main, DM_main);
+  Application.Run;
     end
   else begin
       DM_conn.MyConnDB.Connected := False;

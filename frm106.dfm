@@ -63,7 +63,7 @@ object Form106: TForm106
     Width = 145
     Height = 21
     ItemHeight = 13
-    TabOrder = 0
+    TabOrder = 4
   end
   object ComboBox2: TComboBox
     Left = 112
@@ -71,14 +71,14 @@ object Form106: TForm106
     Width = 145
     Height = 21
     ItemHeight = 13
-    TabOrder = 1
+    TabOrder = 3
   end
   object Edit1: TEdit
     Left = 112
     Top = 56
     Width = 121
     Height = 21
-    TabOrder = 2
+    TabOrder = 0
   end
   object btnAdd: TButton
     Left = 72
@@ -86,7 +86,7 @@ object Form106: TForm106
     Width = 75
     Height = 25
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
-    TabOrder = 3
+    TabOrder = 6
     OnClick = btnAddClick
   end
   object btnClose: TButton
@@ -95,7 +95,7 @@ object Form106: TForm106
     Width = 75
     Height = 25
     Caption = #1047#1072#1082#1088#1099#1090#1100
-    TabOrder = 4
+    TabOrder = 7
     OnClick = btnCloseClick
   end
   object btnUpdate: TButton
@@ -114,7 +114,7 @@ object Form106: TForm106
     Height = 21
     EditMask = '+7!\(999\)000-0000;1;_'
     MaxLength = 15
-    TabOrder = 6
+    TabOrder = 2
     Text = '+7(   )   -    '
   end
   object DateTimePicker1: TDateTimePicker
@@ -125,6 +125,6 @@ object Form106: TForm106
     Date = 43962.779076388890000000
     Format = 'dd.MM.yyyy'
     Time = 43962.779076388890000000
-    TabOrder = 7
+    TabOrder = 1
   end
 end

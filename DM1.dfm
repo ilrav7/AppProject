@@ -1,14 +1,17 @@
 object DM_conn: TDM_conn
   OldCreateOrder = False
-  Left = 488
-  Top = 234
-  Height = 172
-  Width = 341
-  object MyConnDB_INET: TMyConnection
-    Database = 'sql7338523'
-    Username = 'sql7338523'
-    Password = 'TI8NtyLIFB'
-    Server = 'sql7.freesqldatabase.com'
+  Left = 574
+  Top = 226
+  Height = 262
+  Width = 425
+  object MyConnDB: TMyConnection
+    Database = 'sql7339909'
+    IsolationLevel = ilSerializable
+    Options.UseUnicode = True
+    Username = 'sql7339909'
+    Password = 'XMF4ZyAhHn'
+    Server = 'www.db4free.net'
+    LoginPrompt = False
     Left = 32
     Top = 16
   end
@@ -18,17 +21,6 @@ object DM_conn: TDM_conn
       'Select * From Users_AppProject')
     Left = 120
     Top = 16
-  end
-  object MyConnDB: TMyConnection
-    Database = 'test'
-    IsolationLevel = ilSerializable
-    Options.UseUnicode = True
-    Username = 'root'
-    Server = 'localhost'
-    Connected = True
-    LoginPrompt = False
-    Left = 32
-    Top = 72
   end
   object dsUsersApp: TDataSource
     DataSet = QryUsersApp
@@ -52,5 +44,15 @@ object DM_conn: TDM_conn
           'wer(lastname) like lower(:p_lastname) )'
         Active = False
       end>
+  end
+  object conn_localhost: TMyConnection
+    Database = 'test'
+    IsolationLevel = ilSerializable
+    Options.UseUnicode = True
+    Username = 'root'
+    Server = 'localhost'
+    LoginPrompt = False
+    Left = 64
+    Top = 72
   end
 end

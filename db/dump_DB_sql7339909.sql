@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Май 12 2020 г., 12:09
--- Версия сервера: 10.4.11-MariaDB
--- Версия PHP: 7.4.5
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 12 2020 г., 17:55
+-- Версия сервера: 8.0.20
+-- Версия PHP: 7.2.24-0ubuntu0.18.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `test`
+-- База данных: `sql7339909`
 --
 
 -- --------------------------------------------------------
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `departments` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `departments`
@@ -40,7 +40,8 @@ CREATE TABLE `departments` (
 INSERT INTO `departments` (`id`, `name`, `phone`) VALUES
 (6, 'Бухгалтерия', '4-88-35'),
 (7, 'Отдел склада', '2-44-11'),
-(8, 'Отдел продаж', '3-22-77');
+(8, 'Отдел продаж', '3-22-77'),
+(12, 'Отдел New', '3-33-33');
 
 -- --------------------------------------------------------
 
@@ -49,14 +50,14 @@ INSERT INTO `departments` (`id`, `name`, `phone`) VALUES
 --
 
 CREATE TABLE `employees` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `full_name` varchar(200) NOT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `birthday` date NOT NULL,
-  `id_dept` int(11) NOT NULL,
-  `id_pos` int(11) NOT NULL,
+  `id_dept` int DEFAULT NULL,
+  `id_pos` int DEFAULT NULL,
   `flag_fired` bit(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `employees`
@@ -72,7 +73,9 @@ INSERT INTO `employees` (`id`, `full_name`, `phone`, `birthday`, `id_dept`, `id_
 (13, 'Сергеева Ирина Николаевна', '+7(343)985-0943', '1987-05-11', 8, 25, b'1'),
 (14, 'Васильев Петр Олегович', '+7(546)456-8765', '1977-02-09', 8, 19, b'1'),
 (15, 'Игначенко Артем Федорович', '+7(457)668-6797', '1989-04-12', 8, 24, b'1'),
-(16, 'Алексеев Юрий Николаевич', '+7(898)967-6765', '1980-05-05', 8, 19, b'1');
+(16, 'Алексеев Юрий Николаевич', '+7(898)967-6765', '1980-05-05', 8, 19, b'1'),
+(18, 'rtyrtyrty', '+7(   )   -    ', '2020-05-11', NULL, 31, b'1'),
+(19, 'sfsdf', '+7(   )   -    ', '2020-05-11', 12, 18, b'1');
 
 -- --------------------------------------------------------
 
@@ -81,10 +84,10 @@ INSERT INTO `employees` (`id`, `full_name`, `phone`, `birthday`, `id_dept`, `id_
 --
 
 CREATE TABLE `positions` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(70) NOT NULL,
   `salary` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `positions`
@@ -100,7 +103,8 @@ INSERT INTO `positions` (`id`, `name`, `salary`) VALUES
 (25, 'Нач.склада', 70),
 (26, 'Продавец', 40),
 (27, 'Старший продавец', 50),
-(28, 'Работник зала', 35);
+(28, 'Работник зала', 35),
+(31, 'должность new', 100);
 
 -- --------------------------------------------------------
 
@@ -109,13 +113,13 @@ INSERT INTO `positions` (`id`, `name`, `salary`) VALUES
 --
 
 CREATE TABLE `users_app` (
-  `Id` int(11) NOT NULL,
+  `Id` int NOT NULL,
   `login` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(50) NOT NULL,
   `FIRSTNAME` varchar(50) DEFAULT NULL,
   `LASTNAME` varchar(50) DEFAULT NULL,
   `COMMENTS` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `users_app`
@@ -164,25 +168,25 @@ ALTER TABLE `users_app`
 -- AUTO_INCREMENT для таблицы `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT для таблицы `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT для таблицы `users_app`
 --
 ALTER TABLE `users_app`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -192,8 +196,8 @@ ALTER TABLE `users_app`
 -- Ограничения внешнего ключа таблицы `employees`
 --
 ALTER TABLE `employees`
-  ADD CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`id_dept`) REFERENCES `departments` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `employees_ibfk_2` FOREIGN KEY (`id_pos`) REFERENCES `positions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`id_dept`) REFERENCES `departments` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `employees_ibfk_2` FOREIGN KEY (`id_pos`) REFERENCES `positions` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

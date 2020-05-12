@@ -40,7 +40,7 @@ object Form103: TForm103
       Align = alRight
       BevelOuter = bvNone
       Color = clCream
-      TabOrder = 0
+      TabOrder = 1
       object Button1: TButton
         Left = 24
         Top = 8
@@ -56,7 +56,7 @@ object Form103: TForm103
       Top = 24
       Width = 121
       Height = 21
-      TabOrder = 1
+      TabOrder = 0
     end
   end
   object Panel2: TPanel

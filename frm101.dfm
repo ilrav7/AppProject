@@ -77,7 +77,7 @@ object Form101: TForm101
           Font.Name = 'MS Sans Serif'
           Font.Style = []
           ParentFont = False
-          TabOrder = 0
+          TabOrder = 1
           OnClick = btnSearchPostClick
         end
         object Edit1: TEdit
@@ -85,7 +85,7 @@ object Form101: TForm101
           Top = 27
           Width = 121
           Height = 19
-          TabOrder = 1
+          TabOrder = 0
         end
         object btnResetPost: TButton
           Left = 0
@@ -193,7 +193,7 @@ object Form101: TForm101
           Font.Name = 'MS Sans Serif'
           Font.Style = []
           ParentFont = False
-          TabOrder = 0
+          TabOrder = 1
           OnClick = btnSearchDeptClick
         end
         object Edit3: TEdit
@@ -207,7 +207,7 @@ object Form101: TForm101
           Font.Name = 'MS Sans Serif'
           Font.Style = []
           ParentFont = False
-          TabOrder = 1
+          TabOrder = 0
         end
         object btnResetDept: TButton
           Left = 0
@@ -286,7 +286,7 @@ object Form101: TForm101
         Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
         ParentFont = False
         ReadOnly = True
-        TabOrder = 0
+        TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
@@ -360,7 +360,7 @@ object Form101: TForm101
         Align = alTop
         BevelOuter = bvNone
         Color = clCream
-        TabOrder = 1
+        TabOrder = 0
         object Label2: TLabel
           Left = 104
           Top = 5
@@ -386,7 +386,7 @@ object Form101: TForm101
           Font.Name = 'MS Sans Serif'
           Font.Style = []
           ParentFont = False
-          TabOrder = 0
+          TabOrder = 1
           OnClick = btnSearchEmpClick
         end
         object Edit2: TEdit
@@ -394,23 +394,29 @@ object Form101: TForm101
           Top = 27
           Width = 121
           Height = 19
-          TabOrder = 1
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
         end
-      end
-      object btnResetEmp: TButton
-        Left = 0
-        Top = 15
-        Width = 75
-        Height = 33
-        Caption = #1057#1073#1088#1086#1089
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 2
-        OnClick = btnResetEmpClick
+        object btnResetEmp: TButton
+          Left = 0
+          Top = 15
+          Width = 75
+          Height = 33
+          Caption = #1057#1073#1088#1086#1089
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          OnClick = btnResetEmpClick
+        end
       end
     end
   end

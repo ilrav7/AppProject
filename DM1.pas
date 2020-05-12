@@ -8,11 +8,11 @@ uses
 
 type
   TDM_conn = class(TDataModule)
-    MyConnDB_INET: TMyConnection;
-    QryTemp: TMyQuery;
     MyConnDB: TMyConnection;
+    QryTemp: TMyQuery;
     dsUsersApp: TDataSource;
     QryUsersApp: TMyQuery;
+    conn_localhost: TMyConnection;
   private
     { Private declarations }
   public

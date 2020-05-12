@@ -77,11 +77,10 @@ object DM_main: TDM_main
       '        d.name as name_dept,'
       '        p.name as name_pos'
       'From employees emp'
-      '     Inner Join departments d On d.id = emp.id_dept'
-      '     Inner Join positions p On p.id = emp.id_pos '
+      '     LEFT Join departments d On d.id = emp.id_dept'
+      '     LEFT Join positions p On p.id = emp.id_pos '
       'Where 1 = 1'
       '&fio_filter')
-    Active = True
     Left = 16
     Top = 136
     MacroData = <
@@ -114,14 +113,14 @@ object DM_main: TDM_main
       '        d.name as name_dept,'
       '        p.name as name_pos'
       'From employees emp'
-      '     Inner Join departments d On d.id = emp.id_dept'
-      '     Inner Join positions p On p.id = emp.id_pos '
+      '     LEFT Join departments d On d.id = emp.id_dept'
+      '     LEFT Join positions p On p.id = emp.id_pos '
       'Where 1 = 1'
       '&fio_filter'
       '&fired_filter'
+      '&only_fired_filter'
       '&dept_filter'
       '&post_filter')
-    Active = True
     Left = 224
     Top = 120
     MacroData = <
@@ -133,6 +132,11 @@ object DM_main: TDM_main
       item
         Name = 'fired_filter'
         Value = 'and flag_fired =1'
+        Active = False
+      end
+      item
+        Name = 'only_fired_filter'
+        Value = 'and flag_fired =0'
         Active = False
       end
       item

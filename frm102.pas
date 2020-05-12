@@ -11,7 +11,6 @@ type
     Panel1: TPanel;
     DBGrid1: TDBGrid;
     Panel2: TPanel;
-    CkBxFired: TCheckBox;
     btnReset: TButton;
     edtFio: TEdit;
     cmbbxDept: TComboBox;
@@ -20,9 +19,10 @@ type
     Label2: TLabel;
     Label3: TLabel;
     btnSearch: TButton;
-    procedure FormShow(Sender: TObject);
+    rdgFired: TRadioGroup;
     procedure btnSearchClick(Sender: TObject);
     procedure btnResetClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,55 +37,6 @@ implementation
 uses DM2;
 
 {$R *.dfm}
-
-procedure TForm102.FormShow(Sender: TObject);
-var
-   i: Integer;
-begin
-  DM_main.qryReportEmp.Active := True;
-  //**** begin Наполнение combobox1 и combobox 2  ****//
-  cmbbxDept.Items.Clear;
-  cmbbxPost.Items.Clear;
-  with DM_main.QryEmpty do
-    begin
-     SQL.Clear;
-     SQL.Add('SELECT id, name ');
-     SQL.Add('FROM positions ');
-     SQL.Add('ORDER BY name');
-     try
-       ExecSQL except
-         on E: EDatabaseError do
-         ShowMessage(E.Message);
-     end;
-   end;
-   DM_main.QryEmpty.First;
-   for i:=0 to DM_main.QryEmpty.RecordCount - 1 do
-      begin
-        cmbbxPost.Items.AddObject(DM_main.QryEmpty.Fields[1].AsString,
-            Tobject(DM_main.QryEmpty.Fields[0].AsInteger));
-        DM_main.QryEmpty.Next;
-   end;
-   with DM_main.QryEmpty do
-    begin
-     SQL.Clear;
-     SQL.Add('SELECT id, name ');
-     SQL.Add('FROM departments ');
-     SQL.Add('ORDER BY name');
-     try
-       ExecSQL except
-         on E: EDatabaseError do
-         ShowMessage(E.Message);
-     end;
-   end;
-   DM_main.QryEmpty.First;
-   for i:=0 to DM_main.QryEmpty.RecordCount - 1 do
-      begin
-        cmbbxDept.Items.AddObject(DM_main.QryEmpty.Fields[1].AsString,
-            Tobject(DM_main.QryEmpty.Fields[0].AsInteger));
-        DM_main.QryEmpty.Next;
-      end;
-//**** end Наполнение combobox1 и combobox 2 ****//
-end;
 
 procedure TForm102.btnSearchClick(Sender: TObject);
 var
@@ -131,13 +82,14 @@ begin
      else begin
          DM_main.qryReportEmp.MacroByName('post_filter').Active := False;
      end;
-      if (CkBxFired.Checked = True) Then
-        begin
-           DM_main.qryReportEmp.MacroByName('fired_filter').Active := True;
-         end
-     else begin
-       DM_main.qryReportEmp.MacroByName('fired_filter').Active := false;
-     end;
+     if rdgFired.ItemIndex = 1 Then
+        DM_main.qryReportEmp.MacroByName('fired_filter').Active := True
+      else
+        DM_main.qryReportEmp.MacroByName('fired_filter').Active := False;
+     if rdgFired.ItemIndex = 0 Then
+        DM_main.qryReportEmp.MacroByName('only_fired_filter').Active := True
+      else
+        DM_main.qryReportEmp.MacroByName('only_fired_filter').Active := False;
     DM_main.qryReportEmp.Active := True;
   end;
 end;
@@ -146,14 +98,65 @@ procedure TForm102.btnResetClick(Sender: TObject);
 begin
   DM_main.qryReportEmp.Active := False;
   DM_main.qryReportEmp.MacroByName('fired_filter').Active := False;
+  DM_main.qryReportEmp.MacroByName('only_fired_filter').Active := False;
   DM_main.qryReportEmp.MacroByName('dept_filter').Active := False;
   DM_main.qryReportEmp.MacroByName('post_filter').Active := False;
   DM_main.qryReportEmp.MacroByName('fio_filter').Active := False;
   edtFio.Clear;
   cmbbxDept.Text := '';
   cmbbxPost.Text := '';
-  CkBxFired.Checked := False;
+  rdgFired.ItemIndex := -1;
   DM_main.qryReportEmp.Active := True;
+end;
+
+procedure TForm102.FormCreate(Sender: TObject);
+var
+   i: Integer;
+begin
+  //**** begin Наполнение combobox1 и combobox 2  ****//
+  cmbbxDept.Items.Clear;
+  cmbbxPost.Items.Clear;
+  with DM_main.QryEmpty do
+    begin
+     SQL.Clear;
+     SQL.Add('SELECT id, name ');
+     SQL.Add('FROM positions ');
+     SQL.Add('ORDER BY name');
+     try
+       ExecSQL except
+         on E: EDatabaseError do
+         ShowMessage(E.Message);
+     end;
+   end;
+   DM_main.QryEmpty.First;
+   for i:=0 to DM_main.QryEmpty.RecordCount - 1 do
+      begin
+        cmbbxPost.Items.AddObject(DM_main.QryEmpty.Fields[1].AsString,
+            Tobject(DM_main.QryEmpty.Fields[0].AsInteger));
+        DM_main.QryEmpty.Next;
+   end;
+   with DM_main.QryEmpty do
+    begin
+     SQL.Clear;
+     SQL.Add('SELECT id, name ');
+     SQL.Add('FROM departments ');
+     SQL.Add('ORDER BY name');
+     try
+       ExecSQL except
+         on E: EDatabaseError do
+         ShowMessage(E.Message);
+     end;
+   end;
+   DM_main.QryEmpty.First;
+   for i:=0 to DM_main.QryEmpty.RecordCount - 1 do
+      begin
+        cmbbxDept.Items.AddObject(DM_main.QryEmpty.Fields[1].AsString,
+            Tobject(DM_main.QryEmpty.Fields[0].AsInteger));
+        DM_main.QryEmpty.Next;
+      end;
+//**** end Наполнение combobox1 и combobox 2 ****//
+   DM_main.qryReportEMP.Active := False;
+   DM_main.qryReportEMP.Active := True;
 end;
 
 end.

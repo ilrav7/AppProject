@@ -1,6 +1,6 @@
 object Form105: TForm105
-  Left = 588
-  Top = 269
+  Left = 558
+  Top = 246
   Width = 265
   Height = 267
   Caption = '[Form105]'
@@ -65,7 +65,7 @@ object Form105: TForm105
     Width = 75
     Height = 25
     Caption = #1047#1072#1082#1088#1099#1090#1100
-    TabOrder = 3
+    TabOrder = 4
     OnClick = btnCloseClick
   end
   object btnAdd: TButton
@@ -74,7 +74,7 @@ object Form105: TForm105
     Width = 75
     Height = 25
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btnAddClick
   end
 end

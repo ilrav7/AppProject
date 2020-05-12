@@ -57,9 +57,20 @@ begin
    begin
      SQL.Clear;
      SQL.Add('SELECT id, CONCAT(firstname, '' '', lastname) as FIO ');
-     SQL.Add(' FROM users_App ');
+     SQL.Add(' FROM users_app ');
      SQL.Add(' Where login = ''' + v_login + ''' ');
      SQL.Add('       AND password = SHA1(''' + v_password + ''' ) ');
+
+     try
+       DM_conn.MyConnDB.Connected := True;
+     except
+       on E: Exception do
+       begin
+         Showmessage('Не удается подключиться к удаленной базе');
+         Application.Terminate;
+       end;
+     end;
+
      try ExecSQL except
        on E: EDatabaseError do
        ShowMessage (E.Message);
@@ -90,7 +101,7 @@ begin
   if (not Assigned(DM_conn)) then
     begin
       DM_conn := TDM_conn.Create(Application);
-    end;
+   end;
   { if (not Assigned(DM_main)) then
     showmessage('dm_main не создан')    }
 end;

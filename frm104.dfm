@@ -66,7 +66,7 @@ object Form104: TForm104
     Width = 75
     Height = 25
     Caption = #1047#1072#1082#1088#1099#1090#1100
-    TabOrder = 3
+    TabOrder = 4
     OnClick = Button2Click
   end
   object btnUpdate: TButton
@@ -75,7 +75,7 @@ object Form104: TForm104
     Width = 75
     Height = 25
     Caption = #1048#1079#1084#1077#1085#1080#1090#1100
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btnUpdateClick
   end
 end

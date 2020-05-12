@@ -67,7 +67,8 @@ begin
 // ***** Справочник - Должности  *****
   if Pagecontrol1.TabIndex = 0 then
     begin
-    //  Form104 := TForm104.Create(Self);
+      if (not Assigned(Form104)) then
+         Form104 := TForm104.Create(Self);
       Form104.btnAdd.Visible := True;
       Form104.btnUpdate.Visible := False;
       Form104.Edit1.Clear;
@@ -77,7 +78,8 @@ begin
 // ***** Справочник - Отделы  *****
   if Pagecontrol1.TabIndex = 1 then
      begin
-   //   Form105 := TForm105.Create(Self);
+      if (not Assigned(Form105)) then
+          Form105 := TForm105.Create(Self);
       Form105.btnAdd.Visible := True;
       Form105.btnUpdate.Visible := False;
       Form105.Edit1.Clear;
@@ -87,7 +89,7 @@ begin
 // ***** Справочник - Сотрудники  *****
   if Pagecontrol1.TabIndex = 2 then
      begin
-    //  Form106 := TForm106.Create(Self);
+      Form106 := TForm106.Create(Self);
       Form106.btnAdd.Visible := True;
       Form106.btnUpdate.Visible := False;
       Form106.Edit1.Clear;
@@ -104,7 +106,7 @@ begin
   if Edit1.Text <> '' then
     begin
       DM_main.qryPost.MacroByName('name_filter').Active := True;
-      DM_main.qryPost.Params.ParamByName('p_name').AsString := Edit1.Text;
+      DM_main.qryPost.Params.ParamByName('p_name').AsString := '%' + Edit1.Text + '%';
     end
   else begin
      DM_main.qryPost.MacroByName('name_filter').Active := False;
@@ -201,6 +203,8 @@ begin
          ShowMessage('Ничего не выбрано');
       if DBGrid1.DataSource.DataSet.RecordCount > 0 then
         begin
+          if (not Assigned(Form104)) then
+             Form104 := TForm104.Create(Self);
           Form104.btnAdd.Visible := False;
           Form104.btnUpdate.Visible := True;
           Form104.Edit1.Text := DBGrid1.DataSource.DataSet.FieldByName('name').AsString;
@@ -216,6 +220,8 @@ begin
          ShowMessage('Ничего не выбрано');
       if DBGrid1.DataSource.DataSet.RecordCount > 0 then
         begin
+          if (not Assigned(Form105)) then
+             Form105 := TForm105.Create(Self);
           Form105.btnAdd.Visible := False;
           Form105.btnUpdate.Visible := True;
           Form105.Edit1.Text := DBGrid2.DataSource.DataSet.FieldByName('name').AsString;
@@ -230,6 +236,7 @@ begin
          ShowMessage('Ничего не выбрано');
       if DBGrid3.DataSource.DataSet.RecordCount > 0 then
         begin
+          Form106 := TForm106.Create(Self);
           Form106.btnAdd.Visible := False;
           Form106.btnUpdate.Visible := True;
           Form106.Edit1.Text := DBGrid3.DataSource.DataSet.FieldByName('full_name').AsString;
@@ -248,7 +255,9 @@ begin
   DM_main.qryPost.Active := True;
   DM_main.qryDept.MacroByName('name_filter').Active := False;
   DM_main.qryDept.Active := True;
+  DM_main.qryEmp.Active := False;
   DM_main.qryEmp.Active := True;
+  PageControl1.ActivePageIndex := 0
 end;
 
 procedure TForm101.btnSearchDeptClick(Sender: TObject);
@@ -257,7 +266,7 @@ begin
   if Edit3.Text <> '' then
     begin
       DM_main.qryDept.MacroByName('name_filter').Active := True;
-      DM_main.qryDept.Params.ParamByName('p_name').AsString := Edit3.Text;
+      DM_main.qryDept.Params.ParamByName('p_name').AsString := '%' + Edit3.Text + '%';
     end
   else begin
      DM_main.qryDept.MacroByName('name_filter').Active := False;
@@ -281,6 +290,8 @@ procedure TForm101.TabSheet3Show(Sender: TObject);
 begin
   btnDelete.Width := 145;
   btnDelete.Caption := 'Отметка на увольнение';
+  if (DM_main.qryEmp.Active = True )
+     then  DM_main.qryEmp.Refresh;
 end;
 
 procedure TForm101.btnSearchEmpClick(Sender: TObject);

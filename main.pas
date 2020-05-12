@@ -41,7 +41,7 @@ begin
       end;
     2:
       begin
-        if (not Assigned(Form102)) then
+        //if (not Assigned(Form102)) then
           Form102 := TForm102.Create(Self);
           Form102.WindowState := wsMaximized;
           Form102.Show;
