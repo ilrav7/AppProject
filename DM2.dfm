@@ -66,7 +66,6 @@ object DM_main: TDM_main
       'From employees '
       'Where 1 = 1'
       '&fio_filter')
-    Active = True
     Left = 16
     Top = 136
     MacroData = <
