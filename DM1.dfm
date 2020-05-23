@@ -4,7 +4,7 @@ object DM_conn: TDM_conn
   Top = 251
   Height = 262
   Width = 425
-  object MyConnDB_a: TMyConnection
+  object MyConnDB: TMyConnection
     Database = 'sql7339909'
     IsolationLevel = ilSerializable
     Options.UseUnicode = True
@@ -45,13 +45,12 @@ object DM_conn: TDM_conn
         Active = False
       end>
   end
-  object MyConnDB: TMyConnection
+  object MyConnDB_l: TMyConnection
     Database = 'test'
     IsolationLevel = ilSerializable
     Options.UseUnicode = True
     Username = 'root'
     Server = 'localhost'
-    Connected = True
     LoginPrompt = False
     Left = 64
     Top = 72

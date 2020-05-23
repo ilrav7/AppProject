@@ -122,7 +122,6 @@ object DM_main: TDM_main
       '&only_fired_filter'
       '&dept_filter'
       '&post_filter')
-    Active = True
     Left = 224
     Top = 120
     MacroData = <
