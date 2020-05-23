@@ -89,6 +89,7 @@ begin
 // ***** Справочник - Сотрудники  *****
   if Pagecontrol1.TabIndex = 2 then
      begin
+     if (not Assigned(Form106)) then
       Form106 := TForm106.Create(Self);
       Form106.btnAdd.Visible := True;
       Form106.btnUpdate.Visible := False;
@@ -236,6 +237,7 @@ begin
          ShowMessage('Ничего не выбрано');
       if DBGrid3.DataSource.DataSet.RecordCount > 0 then
         begin
+         if (not Assigned(Form106)) then
           Form106 := TForm106.Create(Self);
           Form106.btnAdd.Visible := False;
           Form106.btnUpdate.Visible := True;
@@ -244,6 +246,8 @@ begin
           Form106.DateTimePicker1.Date := StrToDate(DBGrid3.DataSource.DataSet.FieldByName('birthday').AsString);
           Form106.Combobox2.Text := DBGrid3.DataSource.DataSet.FieldByName('name_dept').AsString;
           Form106.Combobox1.Text := DBGrid3.DataSource.DataSet.FieldByName('name_pos').AsString;
+          Form106.cxLookupComboBox1.EditValue := DBGrid3.DataSource.DataSet.FieldByName('id_dept').AsInteger;
+          showmessage(Form106.cxLookupComboBox1.EditValue);
           Form106.Show;
         end;
     end;

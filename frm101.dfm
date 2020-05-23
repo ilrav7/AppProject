@@ -1,6 +1,6 @@
 object Form101: TForm101
-  Left = 312
-  Top = 175
+  Left = 273
+  Top = 131
   BorderStyle = bsNone
   Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082' [Form101]'
   ClientHeight = 495

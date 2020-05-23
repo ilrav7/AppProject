@@ -1,6 +1,6 @@
 object Form106: TForm106
-  Left = 558
-  Top = 188
+  Left = 517
+  Top = 200
   Width = 341
   Height = 334
   Caption = '[Form106]'
@@ -126,5 +126,17 @@ object Form106: TForm106
     Format = 'dd.MM.yyyy'
     Time = 43962.779076388890000000
     TabOrder = 1
+  end
+  object cxLookupComboBox1: TcxLookupComboBox
+    Left = 72
+    Top = 264
+    Properties.KeyFieldNames = 'id'
+    Properties.ListColumns = <
+      item
+        FieldName = 'name'
+      end>
+    Properties.ListSource = DM_main.dsDept
+    TabOrder = 8
+    Width = 145
   end
 end

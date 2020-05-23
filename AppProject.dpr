@@ -7,19 +7,23 @@ uses
   DM1 in 'DM1.pas' {DM_conn: TDataModule},
   frm101 in 'frm101.pas' {Form101},
   frm102 in 'frm102.pas' {Form102},
-  frm103 in 'frm103.pas' {Form103},
+  UsersApplication in 'UsersApplication.pas' {UsersApplicationForm},
   DM2 in 'DM2.pas' {DM_main: TDataModule},
-  frm104 in 'frm104.pas' {Form104},
-  frm105 in 'frm105.pas' {Form105},
-  frm106 in 'frm106.pas' {Form106};
+  AddEditPost in 'AddEditPost.pas' {AddEditPostForm},
+  AddEditDept in 'AddEditDept.pas' {AddEditDeptForm},
+  AddEditEmployee in 'AddEditEmployee.pas' {AddEditEmployeeForm},
+  Departments in 'Departments.pas' {DepartmentsForm},
+  Positions in 'Positions.pas' {PositionsForm},
+  Employees in 'Employees.pas' {EmployeesForm},
+  ReportEmployees in 'ReportEmployees.pas' {ReportEmployeesForm};
 
 {$R *.res}
 
 begin
-  Application.Title := 'https://github.com/ilrav';
   if TFormLogin.Execute then
     begin
        Application.Initialize;
+       Application.Title := 'https://github.com/ilrav7';
        Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TDM_main, DM_main);
   Application.Run;

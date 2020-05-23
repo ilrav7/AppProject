@@ -1,4 +1,4 @@
-unit main;
+unit Main;
 
 interface
 
@@ -18,6 +18,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    
   end;
 
 var
@@ -25,34 +26,50 @@ var
 
 implementation
 
-uses frm101, frm102, frm103, DM1;
+uses  DM1, Departments, Positions, Employees, ReportEmployees, UsersApplication;
 
 {$R *.dfm}
 
 procedure TFormMain.TreeView1Change(Sender: TObject; Node: TTreeNode);
 begin
-  case TreeView1.Selected.StateIndex of
+ case TreeView1.Selected.StateIndex of
     1:
       begin
-        if (not Assigned(Form101)) then
-          Form101 := TForm101.Create(Self);
-          Form101.WindowState := wsMaximized;
-          Form101.Show;
+        if (not Assigned(DepartmentsForm)) then
+          DepartmentsForm := TDepartmentsForm.Create(Self);
+        DepartmentsForm.WindowState := wsMaximized;
+        DepartmentsForm.Show;
       end;
     2:
       begin
-        //if (not Assigned(Form102)) then
-          Form102 := TForm102.Create(Self);
-          Form102.WindowState := wsMaximized;
-          Form102.Show;
+        if (not Assigned(PositionsForm)) then
+          PositionsForm := TPositionsForm.Create(Self);
+        PositionsForm.WindowState := wsMaximized;
+        PositionsForm.Show;
       end;
-     4:
+    3:
       begin
-        if (not Assigned(Form103)) then
-          Form103 := TForm103.Create(Self);
-          Form103.WindowState := wsMaximized;
-          Form103.Show;
+        if (not Assigned(EmployeesForm)) then
+          EmployeesForm := TEmployeesForm.Create(Self);
+        EmployeesForm.WindowState := wsMaximized;
+        EmployeesForm.Show;
       end;
+    4:
+      begin
+        if (not Assigned(ReportEmployeesForm)) then
+          ReportEmployeesForm := TReportEmployeesForm.Create(Self);
+        ReportEmployeesForm.WindowState := wsMaximized;
+        ReportEmployeesForm.Show;
+      end;
+     5:
+      begin
+        if (not Assigned(UsersApplicationForm)) then
+          UsersApplicationForm := TUsersApplicationForm.Create(Self);
+        UsersApplicationForm.WindowState := wsMaximized;
+        UsersApplicationForm.Show;
+      end;  
+
+
   end;
 end;
 

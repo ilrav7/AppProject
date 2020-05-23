@@ -111,7 +111,8 @@ object DM_main: TDM_main
       '        d.id as id_dept,'
       '        p.id as id_pos,'
       '        d.name as name_dept,'
-      '        p.name as name_pos'
+      '        p.name as name_pos,'
+      '        p.salary'
       'From employees emp'
       '     LEFT Join departments d On d.id = emp.id_dept'
       '     LEFT Join positions p On p.id = emp.id_pos '
@@ -121,6 +122,7 @@ object DM_main: TDM_main
       '&only_fired_filter'
       '&dept_filter'
       '&post_filter')
+    Active = True
     Left = 224
     Top = 120
     MacroData = <
